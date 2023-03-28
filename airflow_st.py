@@ -24,21 +24,7 @@ with DAG(dag_id='spotify_twitter',
          catchup=False,
          schedule_interval='0 10 * * *') as dag:  # run it every 10am
 
-    # create_insert_aggregate = SparkSubmitOperator(
-    #     task_id="aggregate_creation",
-    #     packages="com.google.cloud.bigdataoss:gcs-connector:hadoop2-1.9.17,org.mongodb.spark:mongo-spark-connector_2.12:3.0.1",
-    #     exclude_packages="javax.jms:jms,com.sun.jdmk:jmxtools,com.sun.jmx:jmxri",
-    #     conf={"spark.driver.userClassPathFirst": True,
-    #           "spark.executor.userClassPathFirst": True,
-    #           "spark.hadoop.fs.gs.impl":"com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
-    #           "spark.hadoop.fs.AbstractFileSystem.gs.impl":"com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS",
-    #           "spark.hadoop.fs.gs.auth.service.account.enable":True,
-    #           "google.cloud.auth.service.account.json.keyfile":service_account_key_file,
-    #           },
-    #     verbose=True,
-    #     application='aggregates_to_mongo.py'
-    # )
-
+         
     pull_songs_and_tweets = PythonOperator(task_id="pull_songs_and_tweets",
                                            python_callable=pull_songs_and_tweets,
                                            op_kwargs={'cid': cid,
@@ -55,4 +41,4 @@ with DAG(dag_id='spotify_twitter',
                                                       'access_token_secret': access_token_secret,
                                                       'end_date': end_date})
 
-    pull_songs_and_tweets # >> create_insert_aggregate
+    pull_songs_and_tweets
