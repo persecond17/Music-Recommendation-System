@@ -1,4 +1,4 @@
-# Personalized Playlist Generation Using Social Media Content
+# Music Recommendation System: Personalized Playlist Generation Using Social Media Content
 
 ## Intuition
 Drawing inspiration from social media music sharing, we've observed that modern individuals frequently use music as a medium for personal expression, enthusiastically sharing and showcasing their preferences. Intriguingly, this implies a reverse correlation as well - the sentiments and language used in song-sharing social media posts can provide significant insights into the character of the songs themselves.
@@ -26,7 +26,7 @@ We successfully amassed a dataset comprising **2k songs, 240k tweets, and 84k ly
 ### Data Consolidation with MongoDB Atlas 
 We employ MongoDB Atlas, a highly flexible NoSQL database service, to merge and manage our data. This results in a unified and easily accessible data repository ready for analysis.
 
-- [Read data from GCP to MonglDB (Atlas)](https://github.com/persecond17/Music-Recommendation-System/blob/main/GCS_to_MongoDB.ipynb)
+- [Read data from GCP to MongoDB (Atlas)](https://github.com/persecond17/Music-Recommendation-System/blob/main/GCS_to_MongoDB.ipynb)
 
 ![MongoDB interface](./images/mongodb_atlas.png)
 
@@ -36,7 +36,7 @@ The final stage involves analyzing our consolidated data using Colab and Databri
 
 1. Data Filtration: By employing a meticulous filtration process, we eliminate songs with less than 50 related tweets, potential marketing tweets, and their associated lyrics, thus augmenting the precision of our music recommendations.
 
-2. Model - TFIDF: To best represent the relevance of words within our large corpus of data, we have harnessed the power of TFIDF. This methodology merges tweets and lyrics sharing a common song ID from our training set, forming **unique hashing vectors**. For each input text, we convert it into a comparable hashed vector and match it with every song's TFIDF vector, aligning the recommendations with the input's sentiment or topic.
+2. Model Validation (TFIDF): To best represent the relevance of words within our large corpus of data, we have harnessed the power of TFIDF. This methodology merges tweets and lyrics sharing a common song ID from our training set, forming **unique hashing vectors**. For each input text, we convert it into a comparable hashed vector and match it with every song's TFIDF vector, aligning the recommendations with the input's sentiment or topic.
 
 3. Performance Optimization: We've commenced with rigorous testing on a subset of 50 songs from our test set, validating the accuracy of our model. Each song's corresponding tweet corpus is evaluated to ascertain if the target song features among the top 15 recommendations. This rigorous procedure has led to **a high 'top 15 accuracy' of 88%**. 
 Additionally, we have optimized our system to promptly create a personalized playlist from any text input, **remarkably reducing the execution time from 75 seconds to just 5-10 seconds, an improvement of 90%.**
