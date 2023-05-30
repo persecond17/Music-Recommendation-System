@@ -22,7 +22,7 @@ We successfully amassed a dataset comprising **2k songs, 240k tweets, and 84k ly
 We employ MongoDB Atlas, a highly flexible NoSQL database service, to merge and manage our data. This results in a unified and easily accessible data repository ready for analysis.
 
 - [Read data from GCP to MonglDB (Atlas)](https://github.com/persecond17/Music-Recommendation-System/blob/main/GCS_to_MongoDB.ipynb)
-![MongoDB interface](./mongodb_atlas.png)
+![MongoDB interface](./images/mongodb_atlas.png)
 
 ### Data Analysis with Colab & Databricks 
 The final stage involves analyzing our consolidated data using Colab and Databricks. These powerful platforms enable us to process large volumes of data and implement our recommendation engine, enhancing the overall music discovery experience for users.
@@ -37,4 +37,4 @@ Additionally, we have optimized our system to promptly create a personalized pla
 - [Model encapsulation](https://github.com/persecond17/Music-Recommendation-System/tree/main/model)
 - [Music Recommendation System](https://github.com/persecond17/Music-Recommendation-System/blob/main/music_recommendation_system.ipynb)
 
-![Result Sample](./result_sample.jpg)
+![Result Sample](./images/result_sample.jpg)
