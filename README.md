@@ -1,4 +1,4 @@
-# Music Recommendation System: Personalized Playlist Generation Using Social Media Content
+# Spark ML: Personalized Playlist Generation Using Social Media Content
 
 ## Intuition
 Drawing inspiration from social media music sharing, we've observed that modern individuals frequently use music as a medium for personal expression, enthusiastically sharing and showcasing their preferences. Intriguingly, this implies a reverse correlation as well - the sentiments and language used in song-sharing social media posts can provide significant insights into the character of the songs themselves.
