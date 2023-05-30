@@ -6,7 +6,7 @@ Drawing inspiration from social media music sharing, we've observed that modern 
 Motivated by this perspective, we are eager to delve deeper into this phenomenon and integrate it into our music recommendation engine. Our goal is to develop a content-based recommendation system, trained on social media content (particularly tweets), capable of generating tailored playlists from any input text. This approach will infuse our music recommendation system with an element of novelty and unexpected delight.
 
 ![Workflow](./images/workflow.jpg)
-
+![Data Processing](./images/data_process.png)
 
 ## Steps
 ### Data Collection Pipeline with Airflow
@@ -39,7 +39,7 @@ The final stage involves analyzing our consolidated data using Colab and Databri
 2. Model Validation (TFIDF): To best represent the relevance of words within our large corpus of data, we have harnessed the power of TFIDF. This methodology merges tweets and lyrics sharing a common song ID from our training set, forming **unique hashing vectors**. For each input text, we convert it into a comparable hashed vector and match it with every song's TFIDF vector, aligning the recommendations with the input's sentiment or topic.
 
 3. Performance Optimization: We've commenced with rigorous testing on a subset of 50 songs from our test set, validating the accuracy of our model. Each song's corresponding tweet corpus is evaluated to ascertain if the target song features among the top 15 recommendations. This rigorous procedure has led to **a high 'top 15 accuracy' of 88%**. 
-Additionally, we have optimized our system to promptly create a personalized playlist from any text input, **remarkably reducing the execution time from 75 seconds to just 5-10 seconds, an improvement of 90%.**
+Additionally, we have optimized our system to promptly create a personalized playlist from any text input, **remarkably reducing the execution time from 75 seconds to just 3-10 seconds, an improvement of 90%.**
 
 - [Model encapsulation](https://github.com/persecond17/Music-Recommendation-System/tree/main/model)
 - [Music Recommendation System](https://github.com/persecond17/Music-Recommendation-System/blob/main/music_recommendation_system.ipynb)
