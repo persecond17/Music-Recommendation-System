@@ -1,9 +1,12 @@
-# Music Recommendation System: Personalized Playlist Generation Using Social Media Content
+# Personalized Playlist Generation Using Social Media Content
 
 ## Intuition
 Drawing inspiration from social media music sharing, we've observed that modern individuals frequently use music as a medium for personal expression, enthusiastically sharing and showcasing their preferences. Intriguingly, this implies a reverse correlation as well - the sentiments and language used in song-sharing social media posts can provide significant insights into the character of the songs themselves.
 
 Motivated by this perspective, we are eager to delve deeper into this phenomenon and integrate it into our music recommendation engine. Our goal is to develop a content-based recommendation system, trained on social media content (particularly tweets), capable of generating tailored playlists from any input text. This approach will infuse our music recommendation system with an element of novelty and unexpected delight.
+
+![Workflow](./images/workflow.jpg)
+
 
 ## Steps
 ### Data Collection Pipeline with Airflow
@@ -13,16 +16,20 @@ To make certain that our collection included songs with considerable tweet engag
 - [Spotify - Twitter pipeline](https://github.com/persecond17/Music-Recommendation-System/blob/main/spotify_twitter_calls.py)
 - [Implemented the pipeline on Airflow](https://github.com/persecond17/Music-Recommendation-System/blob/main/airflow_st.py)
 
+
 ### Data Storage with Google Cloud Storage (GCP) 
 We successfully amassed a dataset comprising **2k songs, 240k tweets, and 84k lyric lines**, securely stored within Google Cloud Platform (GCP). This ensured data reliability and availability to our team from any location while also providing the scalability our operations demanded.
 
 - [GCP Storage Bucket](https://console.cloud.google.com/storage/browser/spotify-twitter)
 
+
 ### Data Consolidation with MongoDB Atlas 
 We employ MongoDB Atlas, a highly flexible NoSQL database service, to merge and manage our data. This results in a unified and easily accessible data repository ready for analysis.
 
 - [Read data from GCP to MonglDB (Atlas)](https://github.com/persecond17/Music-Recommendation-System/blob/main/GCS_to_MongoDB.ipynb)
+
 ![MongoDB interface](./images/mongodb_atlas.png)
+
 
 ### Data Analysis with Colab & Databricks 
 The final stage involves analyzing our consolidated data using Colab and Databricks. These powerful platforms enable us to process large volumes of data and implement our recommendation engine, enhancing the overall music discovery experience for users.
